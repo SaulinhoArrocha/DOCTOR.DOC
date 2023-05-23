@@ -6,7 +6,7 @@ public class RotacaoHorizontal : MonoBehaviour
 {
     private Rigidbody player;
     public float RotSpeed;
-    bool canHorizontalMove = true;
+    bool canHorizontalMove = false;
 
     // Start is called before the first frame update
     void Start()
