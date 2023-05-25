@@ -21,7 +21,7 @@ public class Zoom : MonoBehaviour
     IEnumerator AbrirMalaeManual()
     {
         Destroy(zoom);
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(3);
         testeMalaeManual.SetActive(true);
     }
 }

@@ -7,8 +7,9 @@ public class PauseMenu : MonoBehaviour
     public Transform pauseMenu;
     public GameObject caixa;
     public GameObject esfera;
+    public GameObject seguraVirus;
     [SerializeField()] Vector3 rotacaoCaixa = new Vector3(0, 0, 0);
-    Vector3 posicaoEsfera = new Vector3(0, 3, 5.5f);
+    Vector3 posicaoEsfera = new Vector3(0, 0.62f, 7.59f);
 
 
     // Start is called before the first frame update
@@ -37,9 +38,20 @@ public class PauseMenu : MonoBehaviour
 
     public void ReiniciarGame()
     {
+        StartCoroutine("Infectado");
+    }
+
+    IEnumerator Infectado()
+    {
         pauseMenu.gameObject.SetActive(false);
         Time.timeScale = 1;
         caixa.transform.rotation = Quaternion.Euler(rotacaoCaixa);
-        esfera.transform.position = posicaoEsfera; 
+        esfera.transform.position = posicaoEsfera;
+        seguraVirus.SetActive(true);
+
+        yield return new WaitForSeconds(3);
+
+        seguraVirus.SetActive(false);
+
     }
 }

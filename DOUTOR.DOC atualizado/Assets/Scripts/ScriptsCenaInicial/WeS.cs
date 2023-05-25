@@ -24,7 +24,7 @@ public class WeS : MonoBehaviour
     IEnumerator AbrirAeD()
     {
         Destroy(wes);
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         testeAeD.SetActive(true);
     }
 }
