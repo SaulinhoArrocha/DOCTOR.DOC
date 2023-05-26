@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class TesteColeta : MonoBehaviour
 {
-    private RotacaoHorizontal rotacaoHorizontal;
-    private RotacaVertical rotacaoVertical;
-    private CameraZoom cameraZoom;
+    private RotacaoHorizontalInicial rotacaoHorizontal;
+    private RotacaoVerticalInicial rotacaoVertical;
+    private CameraZoomInicial cameraZoom;
     public GameObject objetoMalaeManual;
 
 
@@ -14,9 +14,9 @@ public class TesteColeta : MonoBehaviour
     private void OnEnable()
     {
         Destroy(objetoMalaeManual);
-        rotacaoHorizontal = FindObjectOfType<RotacaoHorizontal>();
-        rotacaoVertical = FindObjectOfType<RotacaVertical>();
-        cameraZoom = FindObjectOfType<CameraZoom>();
+        rotacaoHorizontal = FindObjectOfType<RotacaoHorizontalInicial>();
+        rotacaoVertical = FindObjectOfType<RotacaoVerticalInicial>();
+        cameraZoom = FindObjectOfType<CameraZoomInicial>();
 
         rotacaoHorizontal.CancelCamera(value: false);
         rotacaoVertical.CancelCameraVertical(value: false);
@@ -25,9 +25,9 @@ public class TesteColeta : MonoBehaviour
 
     private void OnDisable()
     {
-        rotacaoHorizontal = FindObjectOfType<RotacaoHorizontal>();
-        rotacaoVertical = FindObjectOfType<RotacaVertical>();
-        cameraZoom = FindObjectOfType<CameraZoom>();
+        rotacaoHorizontal = FindObjectOfType<RotacaoHorizontalInicial>();
+        rotacaoVertical = FindObjectOfType<RotacaoVerticalInicial>();
+        cameraZoom = FindObjectOfType<CameraZoomInicial>();
 
         rotacaoHorizontal.CancelCamera(value: true);
         rotacaoVertical.CancelCameraVertical(value: true);

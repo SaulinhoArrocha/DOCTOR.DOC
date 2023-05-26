@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RotacaoHorizontal : MonoBehaviour
+public class RotacaoHorizontalInicial : MonoBehaviour
 {
     private Rigidbody player;
     public float RotSpeed;
-    bool canHorizontalMove = true;
+    bool canHorizontalMove = false;
 
     // Start is called before the first frame update
     void Start()

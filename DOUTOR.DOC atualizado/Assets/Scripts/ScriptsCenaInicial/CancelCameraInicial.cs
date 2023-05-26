@@ -2,20 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TesteMalaeManual : MonoBehaviour
+public class CancelCameraInicial : MonoBehaviour
 {
     private RotacaoHorizontalInicial rotacaoHorizontal;
     private RotacaoVerticalInicial rotacaoVertical;
     private CameraZoomInicial cameraZoom;
-    public GameObject objetoZoom;
-    public GameObject manual;
-    public GameObject mala;
-
 
 
     private void OnEnable()
     {
-        Destroy(objetoZoom);
         rotacaoHorizontal = FindObjectOfType<RotacaoHorizontalInicial>();
         rotacaoVertical = FindObjectOfType<RotacaoVerticalInicial>();
         cameraZoom = FindObjectOfType<CameraZoomInicial>();
@@ -34,8 +29,5 @@ public class TesteMalaeManual : MonoBehaviour
         rotacaoHorizontal.CancelCamera(value: true);
         rotacaoVertical.CancelCameraVertical(value: true);
         cameraZoom.CancelZoom(value: true);
-
-        manual.SetActive(true);
-        mala.SetActive(true);
     }
 }

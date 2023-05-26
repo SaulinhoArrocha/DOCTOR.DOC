@@ -5,16 +5,16 @@ using UnityEngine;
 public class TesteAeD : MonoBehaviour
 {
     // Start is called before the first frame update
-    private RotacaoHorizontal rotacaoHorizontal;
-    private RotacaVertical rotacaoVertical;
+    private RotacaoHorizontalInicial rotacaoHorizontal;
+    private RotacaoVerticalInicial rotacaoVertical;
     public GameObject objetoWeS;
 
 
     private void OnEnable()
     {
         Destroy(objetoWeS);
-        rotacaoHorizontal = FindObjectOfType<RotacaoHorizontal>();
-        rotacaoVertical = FindObjectOfType<RotacaVertical>();
+        rotacaoHorizontal = FindObjectOfType<RotacaoHorizontalInicial>();
+        rotacaoVertical = FindObjectOfType<RotacaoVerticalInicial>();
 
         rotacaoHorizontal.CancelCamera(value: true);
         rotacaoVertical.CancelCameraVertical(value: false);
@@ -22,8 +22,8 @@ public class TesteAeD : MonoBehaviour
 
     private void OnDisable()
     {
-        rotacaoHorizontal = FindObjectOfType<RotacaoHorizontal>();
-        rotacaoVertical = FindObjectOfType<RotacaVertical>();
+        rotacaoHorizontal = FindObjectOfType<RotacaoHorizontalInicial>();
+        rotacaoVertical = FindObjectOfType<RotacaoVerticalInicial>();
 
         rotacaoHorizontal.CancelCamera(value: true);
         rotacaoVertical.CancelCameraVertical(value: true);

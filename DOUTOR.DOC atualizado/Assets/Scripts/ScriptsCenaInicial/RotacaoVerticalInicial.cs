@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RotacaVertical : MonoBehaviour
+public class RotacaoVerticalInicial : MonoBehaviour
 {
     private Rigidbody Cabeca;
     public float verticalSpeed;
     [SerializeField()] Vector3 rotacion = new Vector3(0, 0, 0);
-    bool canVerticalMove = true;
+    bool canVerticalMove = false;
 
     // Start is called before the first frame update
     void Start()
