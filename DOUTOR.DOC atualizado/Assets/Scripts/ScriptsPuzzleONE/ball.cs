@@ -21,7 +21,7 @@ public class ball : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if((other.name == "Saulo") || (other.name == "Carlos") || (other.name == "Joao") || (other.name == "Lilian") || (other.name == "Isabele") || (other.name == "Kleberson"))
+        if((other.name == "Saulo") || (other.name == "Carlos") || (other.name == "Joao") || (other.name == "Lilian") || (other.name == "Isabele") || (other.name == "Kleberson") || (other.name == "Matias") || (other.name == "Paulo") || (other.name == "Marcos"))
         {
             if (pauseMenu.gameObject.activeSelf)
             {

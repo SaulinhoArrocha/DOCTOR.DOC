@@ -469,7 +469,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 414788574}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 446435911}
+        m_TargetAssemblyTypeName: MenuPrincipalMeneger, Assembly-CSharp
+        m_MethodName: SairJogo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!114 &414788574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -508,6 +520,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 414788571}
   m_CullTransparentMesh: 1
+--- !u!1 &446435910
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 446435912}
+  - component: {fileID: 446435911}
+  m_Layer: 0
+  m_Name: MenuManeger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &446435911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446435910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be468424deb4d9e4394d31f2df3e3e30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelLoader: {fileID: 3316065063003268981}
+  nomeDoLevelDeJogo: CenaInicial
+  painelMenuInicial: {fileID: 1173767722}
+  painelOpcoes: {fileID: 1944958006}
+--- !u!4 &446435912
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446435910}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.0683959, y: 1.6714745, z: 5.8016386}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &578359284
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,7 +579,6 @@ GameObject:
   - component: {fileID: 578359287}
   - component: {fileID: 578359286}
   - component: {fileID: 578359285}
-  - component: {fileID: 578359288}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -593,20 +652,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &578359288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 578359284}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be468424deb4d9e4394d31f2df3e3e30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelLoader: {fileID: 3316065063003268981}
-  nomeDoLevelDeJogo: CenaInicial
 --- !u!1 &711155998
 GameObject:
   m_ObjectHideFlags: 0
@@ -691,7 +736,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 578359288}
+      - m_Target: {fileID: 446435911}
         m_TargetAssemblyTypeName: MenuPrincipalMeneger, Assembly-CSharp
         m_MethodName: Jogar
         m_Mode: 1
@@ -702,7 +747,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!114 &711156001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1079,7 +1124,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Por fim, outros elementos como imagens no formato png, que comp\xF5em
+  m_Text: "Por fim, outros elementos, como imagens no formato png, que comp\xF5em
     todos os recursos de abertura e fechamento de itens ao longo do jogo, foram obtidas
     por meio dos sites pngtree.com e pngwing.com, onde, da mesma forma, ap\xF3s cadastrar-se,
     voc\xEA poder\xE1 realizar o download do png que desejar."
@@ -1174,7 +1219,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1319881201}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 446435911}
+        m_TargetAssemblyTypeName: MenuPrincipalMeneger, Assembly-CSharp
+        m_MethodName: FecharOpcoes
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!114 &1319881201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1296,7 +1353,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1500995917}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 446435911}
+        m_TargetAssemblyTypeName: MenuPrincipalMeneger, Assembly-CSharp
+        m_MethodName: AbrirOpcoes
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!114 &1500995917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1806,6 +1875,10 @@ PrefabInstance:
     - target: {fileID: 3316065063095560030, guid: e7133105b52652f4cab35f4f7d97d398, type: 3}
       propertyPath: m_Name
       value: LevelLoaderCircle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316065063095560030, guid: e7133105b52652f4cab35f4f7d97d398, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3316065063095560031, guid: e7133105b52652f4cab35f4f7d97d398, type: 3}
       propertyPath: m_RootOrder
