@@ -10,6 +10,8 @@ public class TesteMalaeManual : MonoBehaviour
     public GameObject objetoZoom;
     public GameObject manual;
     public GameObject mala;
+    public GameObject setaInventario;
+    public GameObject configuracao;
 
 
 
@@ -36,6 +38,8 @@ public class TesteMalaeManual : MonoBehaviour
         cameraZoom.CancelZoom(value: true);
 
         manual.SetActive(true);
+        setaInventario.SetActive(true);
         mala.SetActive(true);
+        configuracao.SetActive(true);
     }
 }
