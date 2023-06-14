@@ -11,7 +11,6 @@ public class TesteMalaeManual : MonoBehaviour
     public GameObject manual;
     public GameObject mala;
     public GameObject setaInventario;
-    public GameObject configuracao;
 
 
 
@@ -40,6 +39,5 @@ public class TesteMalaeManual : MonoBehaviour
         manual.SetActive(true);
         setaInventario.SetActive(true);
         mala.SetActive(true);
-        configuracao.SetActive(true);
     }
 }
