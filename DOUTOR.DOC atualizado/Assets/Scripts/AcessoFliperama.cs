@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class AcessoFliperama : MonoBehaviour
 {
+    public AudioClip somAbrirFlip;
+    AudioSource emissorDeSom;
+
     bool mouseDentroDoObjeto;
     public string sceneName;
 
@@ -13,6 +16,9 @@ public class AcessoFliperama : MonoBehaviour
     void Start()
     {
         mouseDentroDoObjeto = false;
+        emissorDeSom = GetComponent<AudioSource>();
+        emissorDeSom.playOnAwake = false;
+        emissorDeSom.loop = false;
     }
 
     // Update is called once per frame
@@ -22,6 +28,12 @@ public class AcessoFliperama : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
+                if (somAbrirFlip != null)
+                {
+                    emissorDeSom.clip = somAbrirFlip;
+                    emissorDeSom.PlayOneShot(emissorDeSom.clip);
+                }
+
                 levelLoader.Transition(sceneName);
             }
         }

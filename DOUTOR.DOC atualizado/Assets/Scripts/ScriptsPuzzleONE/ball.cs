@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class ball : MonoBehaviour
 {
+    public AudioClip somInfectado;
+    public AudioClip somVencedorPuzzleOne;
+    AudioSource emissorDeSom;
+
     public Transform pauseMenu;
     public Transform vencedor;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        emissorDeSom = GetComponent<AudioSource>();
+        emissorDeSom.playOnAwake = false;
+        emissorDeSom.loop = false;
     }
 
     // Update is called once per frame
@@ -30,8 +36,15 @@ public class ball : MonoBehaviour
             }
             else
             {
+                if (somInfectado != null)
+                {
+                    emissorDeSom.clip = somInfectado;
+                    emissorDeSom.PlayOneShot(emissorDeSom.clip);
+                }
+
                 pauseMenu.gameObject.SetActive(true);
                 Time.timeScale = 0;
+
             }
         }
         else if(other.name == "Destino")
@@ -43,6 +56,12 @@ public class ball : MonoBehaviour
             }
             else
             {
+                if (somVencedorPuzzleOne != null)
+                {
+                    emissorDeSom.clip = somVencedorPuzzleOne;
+                    emissorDeSom.PlayOneShot(emissorDeSom.clip);
+                }
+
                 vencedor.gameObject.SetActive(true);
                 Time.timeScale = 0;
             }

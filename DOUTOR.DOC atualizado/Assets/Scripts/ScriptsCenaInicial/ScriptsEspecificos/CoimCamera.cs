@@ -14,7 +14,6 @@ public class CoimCamera : MonoBehaviour
 
     private void OnDisable()
     {
-        acessoMoeda.SetActive(false);
         coimMala.SetActive(true);
     }
 }
