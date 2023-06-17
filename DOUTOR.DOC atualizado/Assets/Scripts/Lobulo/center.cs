@@ -7,14 +7,27 @@ using UnityEngine.UI;
 public class center : MonoBehaviour
 {
     public GameObject campodeSenha;
-    public GameObject acessoLobuloCentro; 
+    public GameObject acessoLobuloCentro;
+
+    public AudioClip somSenhaCorreta;
+    public AudioClip somSenhaIncorreta;
+    AudioSource emissorDeSom;
+
+
     //bool control = true; 
     string Code = "VACINA"; 
     string Letra = null; 
     int LetraIndex = 0; 
     string Alpha; 
     public Text UiText = null; 
-    [SerializeField] private Animator Door; 
+    [SerializeField] private Animator Door;
+
+    private void Start()
+    {
+        emissorDeSom = GetComponent<AudioSource>();
+        emissorDeSom.playOnAwake = false;
+        emissorDeSom.loop = false;
+    }
 
     public void CodeFunction(string Letras)
     {
@@ -28,6 +41,12 @@ public class center : MonoBehaviour
         if (Letra == Code)
         {
             //campodeSenha.SetActive(false);
+            if (somSenhaCorreta != null)
+            {
+                emissorDeSom.clip = somSenhaCorreta;
+                emissorDeSom.PlayOneShot(emissorDeSom.clip);
+            }
+
             UiText.text = "Correto"; 
             Door.SetBool("Open", true);
             StartCoroutine("StopDoor");
@@ -38,6 +57,12 @@ public class center : MonoBehaviour
         }
         else
         {
+            if (somSenhaIncorreta != null)
+            {
+                emissorDeSom.clip = somSenhaIncorreta;
+                emissorDeSom.PlayOneShot(emissorDeSom.clip);
+            }
+
             UiText.text = "Incorreto!"; 
 
         }

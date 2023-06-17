@@ -7068,6 +7068,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ea8ebf4198e32a40a16952cbdc2d88e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  somAbrirMicros: {fileID: 0}
   ativado: {fileID: 0}
   formula: {fileID: 0}
   rna: {fileID: 0}

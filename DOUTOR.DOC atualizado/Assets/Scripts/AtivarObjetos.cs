@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class AtivarObjetos : MonoBehaviour
 {
+    public AudioClip somAbrirMicros;
+    AudioSource emissorDeSom;
+
     public GameObject ativado, formula;
 
     public Transform rna;
@@ -13,7 +16,21 @@ public class AtivarObjetos : MonoBehaviour
     public Transform proteinaM;
     public Transform envelope;
 
+    private void Start()
+    {
+        emissorDeSom = GetComponent<AudioSource>();
+        emissorDeSom.playOnAwake = false;
+        emissorDeSom.loop = false;
+
+    }
+
     private void OnMouseDown(){
+
+        if (somAbrirMicros != null)
+        {
+            emissorDeSom.clip = somAbrirMicros;
+            emissorDeSom.PlayOneShot(emissorDeSom.clip);
+        }
 
         ativado.SetActive(true);
 

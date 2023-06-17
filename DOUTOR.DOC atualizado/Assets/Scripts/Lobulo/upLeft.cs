@@ -9,6 +9,18 @@ public class upLeft : MonoBehaviour
     public GameObject campodeSenha;
     public GameObject acessoLobuloSE;
 
+    public AudioClip somSenhaCorreta;
+    public AudioClip somSenhaIncorreta;
+    AudioSource emissorDeSom;
+
+
+    private void Start()
+    {
+        emissorDeSom = GetComponent<AudioSource>();
+        emissorDeSom.playOnAwake = false;
+        emissorDeSom.loop = false;
+    }
+
     //bool control = true; 
     string Code = "NITROGENADA"; 
     string Letra = null; 
@@ -29,6 +41,12 @@ public class upLeft : MonoBehaviour
         if (Letra == Code)
         {
             //campodeSenha.SetActive(false);
+            if (somSenhaCorreta != null)
+            {
+                emissorDeSom.clip = somSenhaCorreta;
+                emissorDeSom.PlayOneShot(emissorDeSom.clip);
+            }
+
             UiText.text = "Correto"; 
             Door.SetBool("Open", true);
             StartCoroutine("StopDoor");
@@ -39,6 +57,12 @@ public class upLeft : MonoBehaviour
         }
         else
         {
+            if (somSenhaIncorreta != null)
+            {
+                emissorDeSom.clip = somSenhaIncorreta;
+                emissorDeSom.PlayOneShot(emissorDeSom.clip);
+            }
+
             UiText.text = "Incorreto!"; 
 
         }

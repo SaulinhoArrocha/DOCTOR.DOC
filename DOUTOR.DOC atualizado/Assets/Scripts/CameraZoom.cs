@@ -7,9 +7,9 @@ public class CameraZoom : MonoBehaviour
     int zoom = 30;
     float smooth = 5;
     int normal = 90;
-    bool canMakeZoom = false;
+    bool canMakeZoom = true;
 
-    private bool isZoomed = true;
+    private bool isZoomed = false;
     public GameObject ativaInventario;
 
 
