@@ -6,6 +6,8 @@ public class AeD : MonoBehaviour
 {
     public GameObject testeZoom;
 
+    public GameObject objetoZoom;
+
     public GameObject aed;
 
     private void Start()
@@ -26,5 +28,6 @@ public class AeD : MonoBehaviour
         Destroy(aed);
         yield return new WaitForSeconds(3);
         testeZoom.SetActive(true);
+        objetoZoom.SetActive(true);
     }
 }

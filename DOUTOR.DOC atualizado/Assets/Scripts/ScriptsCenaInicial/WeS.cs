@@ -8,6 +8,8 @@ public class WeS : MonoBehaviour
 
     public GameObject wes;
 
+    public GameObject objetoAeD;
+
     private void Start()
     {
     }
@@ -26,5 +28,6 @@ public class WeS : MonoBehaviour
         Destroy(wes);
         yield return new WaitForSeconds(3);
         testeAeD.SetActive(true);
+        objetoAeD.SetActive(true);
     }
 }
