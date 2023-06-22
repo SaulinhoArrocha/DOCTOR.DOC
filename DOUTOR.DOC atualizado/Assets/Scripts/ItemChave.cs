@@ -73,7 +73,7 @@ public class ItemChave : MonoBehaviour
             emissorDeSom.clip = somPegarChave;
             emissorDeSom.PlayOneShot(emissorDeSom.clip);
         }
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1f);
 
         chaveMala.SetActive(true);
         Destroy(gameObject);
