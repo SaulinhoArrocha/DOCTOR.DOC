@@ -6,12 +6,27 @@ public class AcertouHemaglu : MonoBehaviour
 {
     public GameObject hemagluMala, hemagluFinal, hemagluCamera;
 
-    private void OnMouseDown()
+    public delegate void UsarHemaglu();
+    public static event UsarHemaglu OnUsouHemaglu;
+
+    void OnMouseDown()
     {
-        Destroy(gameObject);
+        if (OnUsouHemaglu != null)
+        {
+            OnUsouHemaglu();
+        }
+
+        StartCoroutine("Hemaglu");
+    }
+
+    IEnumerator Hemaglu()
+    {
         Destroy(hemagluMala);
         hemagluCamera.SetActive(false);
         hemagluFinal.SetActive(true);
 
+        yield return new WaitForSeconds(0.5f);
+
+        Destroy(gameObject);
     }
 }

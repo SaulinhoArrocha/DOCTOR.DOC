@@ -6,12 +6,27 @@ public class AcertouEnvelopeC : MonoBehaviour
 {
     public GameObject envelopeCMala, envelopeCFinal, envelopeCCamera;
 
-    private void OnMouseDown()
+    public delegate void UsarEnvelopeC();
+    public static event UsarEnvelopeC OnUsouEnvelopeC;
+
+    void OnMouseDown()
     {
-        Destroy(gameObject);
+        if (OnUsouEnvelopeC != null)
+        {
+            OnUsouEnvelopeC();
+        }
+
+        StartCoroutine("EnvelopeC");
+    }
+
+    IEnumerator EnvelopeC()
+    {
         Destroy(envelopeCMala);
         envelopeCCamera.SetActive(false);
         envelopeCFinal.SetActive(true);
 
+        yield return new WaitForSeconds(0.5f);
+
+        Destroy(gameObject);
     }
 }

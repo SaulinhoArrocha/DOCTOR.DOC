@@ -6,12 +6,28 @@ public class AcertouPS : MonoBehaviour
 {
     public GameObject psMala, psFinal, psCamera;
 
-    private void OnMouseDown()
+    public delegate void UsarPS();
+    public static event UsarPS OnUsouPS;
+
+
+    void OnMouseDown()
     {
-        Destroy(gameObject);
+        if (OnUsouPS != null)
+        {
+            OnUsouPS();
+        }
+
+        StartCoroutine("ProteinaSP");
+    }
+
+    IEnumerator ProteinaSP()
+    {
         Destroy(psMala);
         psCamera.SetActive(false);
         psFinal.SetActive(true);
 
+        yield return new WaitForSeconds(0.5f);
+
+        Destroy(gameObject);
     }
 }

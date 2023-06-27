@@ -6,12 +6,27 @@ public class AcertouPM : MonoBehaviour
 {
     public GameObject pmMala, pmFinal, pmCamera;
 
-    private void OnMouseDown()
+    public delegate void UsarPM();
+    public static event UsarPM OnUsouPM;
+
+    void OnMouseDown()
     {
-        Destroy(gameObject);
+        if (OnUsouPM != null)
+        {
+            OnUsouPM();
+        }
+
+        StartCoroutine("ProteinaM");
+    }
+
+    IEnumerator ProteinaM()
+    {
         Destroy(pmMala);
         pmCamera.SetActive(false);
         pmFinal.SetActive(true);
 
+        yield return new WaitForSeconds(0.5f);
+
+        Destroy(gameObject);
     }
 }

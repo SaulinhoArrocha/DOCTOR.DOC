@@ -14,9 +14,12 @@ public class CheckMap : MonoBehaviour
     public GameObject Usa;
     public GameObject Map; 
     public GameObject Box; 
-    [SerializeField] private Animator Lousa; 
+    [SerializeField] private Animator Lousa;
 
-    
+    public delegate void GirarMapa();
+    public static event GirarMapa OnMapaGirou;
+
+
 
     // Update is called once per frame
     void Update()
@@ -24,6 +27,11 @@ public class CheckMap : MonoBehaviour
          if((Origem.transform.position == China.transform.position) && (Vacina.transform.position == ReinoUnido.transform.position) &&
         (Lockdown.transform.position == Vietna.transform.position) && (Mortes.transform.position == Usa.transform.position) )
         {
+            if (OnMapaGirou != null)
+            {
+                OnMapaGirou();
+            }
+
             Map.SetActive(false); 
             Box.SetActive(true); 
             Lousa.SetBool("Rotate", true); 

@@ -6,12 +6,27 @@ public class AcertouRna : MonoBehaviour
 {
     public GameObject rnaMala, rnaFinal, rnaCamera;
 
-    private void OnMouseDown()
+    public delegate void UsarRna();
+    public static event UsarRna OnUsouRna;
+
+    void OnMouseDown()
     {
-        Destroy(gameObject);
+        if (OnUsouRna != null)
+        {
+            OnUsouRna();
+        }
+
+        StartCoroutine("Rna");
+    }
+
+    IEnumerator Rna()
+    {
         Destroy(rnaMala);
         rnaCamera.SetActive(false);
         rnaFinal.SetActive(true);
 
+        yield return new WaitForSeconds(0.5f);
+
+        Destroy(gameObject);
     }
 }
