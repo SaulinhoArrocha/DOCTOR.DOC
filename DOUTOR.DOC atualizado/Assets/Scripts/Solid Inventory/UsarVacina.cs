@@ -2,16 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AcessoMap : MonoBehaviour
+public class UsarVacina : MonoBehaviour
 {
-    public GameObject Map;
+    public LevelLoader LevelLoader;
+    public GameObject vacinaMala, vacinaCamera;
 
-    public AudioClip somAbrirMapa;
+    public AudioClip somPortal;
     AudioSource emissorDeSom;
+
 
     private void Start()
     {
-
         emissorDeSom = GetComponent<AudioSource>();
         emissorDeSom.playOnAwake = false;
         emissorDeSom.loop = false;
@@ -19,12 +20,16 @@ public class AcessoMap : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (somAbrirMapa != null)
+        if (somPortal != null)
         {
-            emissorDeSom.clip = somAbrirMapa;
+            emissorDeSom.clip = somPortal;
             emissorDeSom.PlayOneShot(emissorDeSom.clip);
         }
 
-        Map.SetActive(true);
+        Destroy(vacinaMala);
+        Destroy(vacinaCamera);
+
+        LevelLoader.Transition("Final");
     }
+
 }

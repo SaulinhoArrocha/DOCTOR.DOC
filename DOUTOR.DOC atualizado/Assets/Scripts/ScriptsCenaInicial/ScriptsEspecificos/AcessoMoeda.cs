@@ -4,40 +4,27 @@ using UnityEngine;
 
 public class AcessoMoeda : MonoBehaviour
 {
-    public AudioClip somUtilizarMoeda;
-    AudioSource emissorDeSom;
-
-    private void Start()
-    {
-        emissorDeSom = GetComponent<AudioSource>();
-        emissorDeSom.playOnAwake = false;
-        emissorDeSom.loop = false;
-    }
-
 
     public GameObject acessoFlip;
     public GameObject utilizar;
     public GameObject efeitoFlip;
     public GameObject coimMala, coimCamera;
 
+    public delegate void UsarMoeda();
+    public static event UsarMoeda OnUsouMoeda;
+
     private void OnMouseDown()
     {
+        if (OnUsouMoeda != null)
+        {
+            OnUsouMoeda();
+        }
+
         StartCoroutine("UtilizarMoeda");
     }
 
     IEnumerator UtilizarMoeda()
     {
-        MeshRenderer renderer = GetComponentInChildren<MeshRenderer>();
-        if (renderer != null)
-        {
-            renderer.enabled = false;
-        }
-        if (somUtilizarMoeda != null)
-        {
-            emissorDeSom.clip = somUtilizarMoeda;
-            emissorDeSom.PlayOneShot(emissorDeSom.clip);
-        }
-
         efeitoFlip.SetActive(true);
         Destroy(utilizar);
         Destroy(coimMala);

@@ -2,29 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AcessoMap : MonoBehaviour
+public class SomColetarMoeda : MonoBehaviour
 {
-    public GameObject Map;
-
-    public AudioClip somAbrirMapa;
+    public AudioClip somUtilizarMoeda;
     AudioSource emissorDeSom;
 
     private void Start()
     {
-
         emissorDeSom = GetComponent<AudioSource>();
         emissorDeSom.playOnAwake = false;
         emissorDeSom.loop = false;
+
+        AcessoMoeda.OnUsouMoeda += UtilizouMoeda;
     }
 
-    private void OnMouseDown()
+    public void UtilizouMoeda()
     {
-        if (somAbrirMapa != null)
+        if (somUtilizarMoeda != null)
         {
-            emissorDeSom.clip = somAbrirMapa;
+            emissorDeSom.clip = somUtilizarMoeda;
             emissorDeSom.PlayOneShot(emissorDeSom.clip);
         }
-
-        Map.SetActive(true);
     }
 }
