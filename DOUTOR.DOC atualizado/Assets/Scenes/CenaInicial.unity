@@ -18717,7 +18717,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 139, y: -350}
+  m_AnchoredPosition: {x: 139, y: -375}
   m_SizeDelta: {x: 90, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1733955781
@@ -18874,7 +18874,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 124, y: -69}
+  m_AnchoredPosition: {x: 124, y: -89.2}
   m_SizeDelta: {x: 90, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1739389850
@@ -19867,7 +19867,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1846202878}
   - component: {fileID: 1846202880}
-  - component: {fileID: 1846202879}
   m_Layer: 0
   m_Name: AcessoMap
   m_TagString: Untagged
@@ -19890,19 +19889,6 @@ Transform:
   m_Father: {fileID: 1786254219}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1846202879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1846202877}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5bada020c021c042a1e26ae44cdeef6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Map: {fileID: 0}
 --- !u!65 &1846202880
 BoxCollider:
   m_ObjectHideFlags: 0
