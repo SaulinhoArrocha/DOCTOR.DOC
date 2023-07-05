@@ -10,6 +10,8 @@ public class ball : MonoBehaviour
 
     public Transform pauseMenu;
     public Transform vencedor;
+    public GameObject restart;
+    public GameObject configuracao;
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +46,8 @@ public class ball : MonoBehaviour
 
                 pauseMenu.gameObject.SetActive(true);
                 Time.timeScale = 0;
+                restart.SetActive(false);
+                configuracao.SetActive(false);
 
             }
         }
@@ -64,6 +68,8 @@ public class ball : MonoBehaviour
 
                 vencedor.gameObject.SetActive(true);
                 Time.timeScale = 0;
+                restart.SetActive(false);
+                configuracao.SetActive(false);
             }
         }
     }

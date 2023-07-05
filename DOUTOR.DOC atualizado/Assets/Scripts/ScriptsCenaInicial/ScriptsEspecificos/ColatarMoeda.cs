@@ -46,7 +46,8 @@ public class ColatarMoeda : MonoBehaviour
         Destroy(coletar);
         coimMala.SetActive(true);
 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.6f);
         utilizar.SetActive(true);
+        Destroy(gameObject);
     }
 }

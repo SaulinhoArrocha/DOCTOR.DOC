@@ -9,6 +9,7 @@ public class AcessoTutorial : MonoBehaviour
     public GameObject robo2;
     public GameObject inicio;
     public GameObject particulas;
+    public GameObject pularTutorial;
 
     private void OnMouseDown()
     {
@@ -19,9 +20,10 @@ public class AcessoTutorial : MonoBehaviour
     {
         Destroy(robo1);
         Destroy(particulas);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.3f);
         robo2.SetActive(true);
         inicio.SetActive(true);
         gameObject.SetActive(false);
+        pularTutorial.SetActive(true);
     }
 }
